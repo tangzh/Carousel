@@ -53,27 +53,23 @@ Carousel.prototype._move = function(direction) {
 			$nextImage.addClass('prepare next');
 
 			setTimeout(function() {
-				console.log('add to-left');
 				// animate current image
 				$currentImage.addClass('to-left');						
-			}, 5);
+			}, 0);
 
 			setTimeout(function() {
-				console.log('remove next');
 				// animate next image
 				$nextImage.removeClass('next');
-			}, 10);
+			}, 60);
       
 			setTimeout(function() {
-				console.log('remove active');
 				$currentImage.removeClass('active').removeClass('to-left');									
 			}, 510);
 
 			setTimeout(function() {
-				console.log('add active');
 				$nextImage.addClass('active').removeClass('prepare');			
 				this.currentIndex = nextIndex;
-			}.bind(this), 520);
+			}.bind(this), 570);
 		}
 	} else {
 		if (this.currentIndex > 0) {
@@ -96,15 +92,16 @@ Carousel.prototype._move = function(direction) {
 
 			setTimeout(function() {
 				$nextImage.removeClass('pre');
-			}, 10);
+			}, 60);
+
+			setTimeout(function() {
+				$currentImage.removeClass('active').removeClass('to-right');									
+			}, 510);
 
 			setTimeout(function() {				
-				$currentImage.removeClass('active');
-				$currentImage.removeClass('to-right');
-				$nextImage.removeClass('prepare');
-				$nextImage.addClass('active');
+				$nextImage.addClass('active').removeClass('prepare');
 				this.currentIndex = nextIndex;
-			}.bind(this), 500);
+			}.bind(this), 570);
 		}
 	}
 

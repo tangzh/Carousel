@@ -1,0 +1,82 @@
+* {
+	box-sizing: border-box;
+}
+
+/* utils class*/
+.vertical-align {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+
+/* specific class*/
+.carousel-container {
+	height: 300px;
+	width: 400px;
+	background-color: lightgrey;
+	display: flex;
+	justify-content: center;
+}
+
+
+/* style for arrows */
+.carousel-container .arrow-container {
+	width: 10%;
+	height: 100%;
+}
+
+.carousel-container .arrow-container .arrow {
+	width: 20px;
+	height: 20px;
+	margin: auto;
+}
+
+
+/* style for images */
+.carousel-container .image-container {
+	width: 80%;
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+}
+
+.carousel-container .image-container .carousel-image {
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	transition: all ease-out 0.5s;
+	display: none;
+}
+
+.carousel-container .image-container .carousel-image.active {
+	display: block;
+}
+
+.carousel-container .image-container .carousel-image.active.to-left {
+	transform: translateX(-100%);
+}
+
+.carousel-container .image-container .carousel-image.active.to-right {
+	transform: translateX(100%);
+}
+
+.carousel-container .image-container .carousel-image.prepare {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	display: block;
+	top: 0;
+	transform: translateX(0);
+	z-index: 10;
+}
+
+.carousel-container .image-container .carousel-image.prepare.next {
+	transform: translateX(100%);
+}
+
+.carousel-container .image-container .carousel-image.prepare.pre {
+	transform: translateX(-100%);
+}
+

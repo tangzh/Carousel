@@ -1,6 +1,6 @@
 var $container = $('.carousel-container');
 var carousel = new Carousel($container, {
-	infinite: true
+  infinite: true
 });
 
 carousel.startCarousel();
